@@ -1,16 +1,9 @@
 #!/bin/bash
-# Script de monitoreo basico del sistema
 
-echo "=== REPORTE DEL SISTEMA ==="
-echo "Fecha y hora: $(date)"
-echo ""
+echo "=== REPORTE DEL SISTEMA ===" >> sistema.log
+echo "Fecha y hora: $(date)" >> sistema.log
+free -h >> sistema.log
+df -h / >> sistema.log
+echo "---------------------------" >> sistema.log
 
-echo "--- USO MEMORIA RAM ---"
-free -h
-echo ""
-
-echo "--- ESPACIO EN DISCO ---"
-df -h /
-echo ""
-
-echo "=== FIN DEL REPORTE ==="
+echo "¡Listo! Datos guardado en el archivo sistema.log"
